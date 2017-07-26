@@ -1,6 +1,6 @@
 ## ARoundDemo
 
-> [Alibaba A Router]("https://github.com/alibaba/ARouter")
+[Alibaba A Router]("https://github.com/alibaba/ARouter")
 
 1. 添加依赖和配置
 ```
@@ -54,4 +54,4 @@ ARouter.getInstance().build("/test/1")
 			.navigation();
 ```
 
-<img src=".https://raw.githubusercontent.com/yikwing/ljkplayer_demo/master/image/qrcode.gif" width="600" height="500">
+<img src="https://raw.githubusercontent.com/yikwing/ljkplayer_demo/master/image/qrcode.gif" width="600" height="500">
