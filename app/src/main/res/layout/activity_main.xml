@@ -14,14 +14,23 @@
         android:layout_marginTop="50dp"
         android:text="普通跳转" />
 
+    <Button
+        android:id="@+id/btn_click4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_click1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="url跳转" />
+
 
     <Button
         android:id="@+id/btn_click2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_click1"
+        android:layout_below="@id/btn_click4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:text="图片跳转" />
 
     <Button
@@ -30,7 +39,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_click2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:text="lib跳转" />
+
+    <Button
+        android:id="@+id/btn_click5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_click3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="自动注入跳转" />
 
 </RelativeLayout>
