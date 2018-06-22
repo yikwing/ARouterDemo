@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
-import com.rongyi.arounddemo.GlideCircleTransform;
 import com.rongyi.arounddemo.R;
 
 /**
@@ -31,7 +30,6 @@ public class ImageActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(url)) {
             Glide.with(this)
                     .load(url)
-                    .transform(new GlideCircleTransform(this))
                     .into(mImageView);
         }
 
