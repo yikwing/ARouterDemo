@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
+import com.orhanobut.logger.Logger;
 import com.rongyi.arounddemo.R;
 
 import java.util.Date;
@@ -22,14 +21,18 @@ public class TextActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        ARouter.getInstance().inject(this);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
 
         String str = getIntent().getStringExtra("name");
+        String extra = getIntent().getStringExtra("extra");
+
         if (!TextUtils.isEmpty(str)) {
             ((TextView) findViewById(R.id.textView)).setText(str);
+        }
+
+        if (!TextUtils.isEmpty(extra)) {
+            Logger.d("拦截器参数:" + extra);
         }
 
     }

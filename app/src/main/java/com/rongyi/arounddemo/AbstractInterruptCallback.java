@@ -4,7 +4,7 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 
 
-public abstract class InterruptCallback implements NavigationCallback {
+public abstract class AbstractInterruptCallback implements NavigationCallback {
     @Override
     public void onFound(Postcard postcard) {
 
