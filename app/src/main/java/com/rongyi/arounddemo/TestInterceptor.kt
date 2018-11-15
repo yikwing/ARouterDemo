@@ -6,6 +6,7 @@ import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Interceptor
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback
 import com.alibaba.android.arouter.facade.template.IInterceptor
+import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * Demo class
@@ -15,16 +16,23 @@ import com.alibaba.android.arouter.facade.template.IInterceptor
  */
 
 
-@Interceptor(priority = 8, name = "测试用拦截器")
+@Interceptor(priority = 8, name = "登录用拦截器")
 class TestInterceptor : IInterceptor {
-    override fun process(postcard: Postcard?, callback: InterceptorCallback?) {
-        if (postcard?.path == "/ui/text") {
-            //如果是跳到BActivity，就加个数据
-            postcard.withString("extra", "我是在拦截器中附加的参数")
+
+    override fun process(postcard: Postcard, callback: InterceptorCallback) {
+
+        when (postcard.path) {
+            "/ui/text" -> {
+                ARouter.getInstance().build("/ui/login").navigation()
+            }
+            else -> {
+                postcard.withString("extra", "我是在拦截器中附加的参数")
+
+                //继续跳转
+                callback.onContinue(postcard)
+            }
         }
 
-        //继续跳转
-        callback!!.onContinue(postcard)
 
         //终止跳转
         //callback.onInterrupt(null)

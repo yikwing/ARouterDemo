@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.orhanobut.logger.Logger;
@@ -32,7 +33,7 @@ public class TextActivity extends AppCompatActivity {
         }
 
         if (!TextUtils.isEmpty(extra)) {
-            Logger.d("拦截器参数:" + extra);
+            Toast.makeText(this, "拦截器参数:" + extra, Toast.LENGTH_SHORT).show();
         }
 
     }

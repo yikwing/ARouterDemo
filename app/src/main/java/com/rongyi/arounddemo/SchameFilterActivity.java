@@ -24,6 +24,12 @@ public class SchameFilterActivity extends AppCompatActivity {
             public void onArrival(Postcard postcard) {
                 finish();
             }
+
+            @Override
+            public void onLost(Postcard postcard) {
+                super.onLost(postcard);
+
+            }
         });
     }
 }

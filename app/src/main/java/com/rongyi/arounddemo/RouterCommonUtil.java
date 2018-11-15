@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import io.reactivex.Observable;
@@ -19,7 +20,12 @@ public class RouterCommonUtil {
 
 
     public static void startMainActivity(final Activity activity) {
-        ARouter.getInstance().build("/ui/主页").navigation(activity, new AbstractInterruptCallback() {
+        ARouter.getInstance().build("/ui/主页").navigation(activity, new NavCallback() {
+            @Override
+            public void onArrival(Postcard postcard) {
+
+            }
+
             @Override
             public void onInterrupt(Postcard postcard) {
                 toastInterruptInfo(activity, postcard);
@@ -43,7 +49,12 @@ public class RouterCommonUtil {
     }
 
     public static void startMainTextActivity(final Activity activity, String value) {
-        ARouter.getInstance().build("/ui/text").withString("arg1", value).navigation(activity, 1001, new AbstractInterruptCallback() {
+        ARouter.getInstance().build("/ui/text").withString("arg1", value).navigation(activity, 1001, new NavCallback() {
+            @Override
+            public void onArrival(Postcard postcard) {
+
+            }
+
             @Override
             public void onInterrupt(Postcard postcard) {
                 toastInterruptInfo(activity, postcard);
@@ -53,9 +64,15 @@ public class RouterCommonUtil {
 
     public static void startMainImageActivity(final Activity activity, String value) {
         ARouter.getInstance().build("/ui/image")
-                .withString("arg1", value).navigation(activity, new AbstractInterruptCallback() {
+                .withString("imgUrl", value).navigation(activity, new NavCallback() {
+            @Override
+            public void onArrival(Postcard postcard) {
+
+            }
+
             @Override
             public void onInterrupt(Postcard postcard) {
+
                 toastInterruptInfo(activity, postcard);
             }
         });
@@ -63,7 +80,12 @@ public class RouterCommonUtil {
 
     public static void startLibraryOneActivity(final Activity activity) {
         ARouter.getInstance().build("/libraryOne/主页")
-                .navigation(activity, new AbstractInterruptCallback() {
+                .navigation(activity, new NavCallback() {
+                    @Override
+                    public void onArrival(Postcard postcard) {
+
+                    }
+
                     @Override
                     public void onInterrupt(Postcard postcard) {
                         toastInterruptInfo(activity, postcard);

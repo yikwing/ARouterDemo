@@ -40,6 +40,7 @@
         <activity android:name=".ui.ImageActivity" />
         <activity android:name=".ui.TestURLActicity" />
         <activity android:name=".ui.TestFragmentActivity" />
+        <activity android:name=".LoginActivity" />
 
     </application>
 
